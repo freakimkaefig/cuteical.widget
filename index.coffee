@@ -5,14 +5,13 @@
 
 
 options =
-  widgetEnable: true      # To enable the widget, set value to true. To disable, false.
-  theme: 'bright'         # Theme options: 'pastel', 'dark', or 'bright'
-  textColor: 'black'      # Color options: 'default' / html colors or values: 'black', 'white', '#000' etc
+  # To enable the widget, set value to true. To disable, false.
+  widgetEnable: true
 
 
 #This command shows all of your events for today and tomorrow
 
-command: "python cuteical.widget/calendar_events_txtbullets.py"
+command: "python ical.widget/calendar_events_txtbullets.py"
 
 
 # the refresh frequency s is seconds and m is minutes
@@ -37,73 +36,30 @@ update: (output, domEl) ->
 
 
 style: """
-  font-family: Helvetica Neue
-  left: 25px
-  top: 20px
-
-  pastel_purple = #ccb5fc
-  pastel_pink = #f4bdf7
-  pastel_yellow = #fff49b
-  pastel_green = #a0f2a4
-
-  dark_purple = #250333
-  dark_pink = #400122
-  dark_yellow = #4A4104
-  dark_green = #044A0B
-
-  bright_purple = rgb(138, 116, 176)
-  bright_pink = rgb(217,76,150)
-  bright_yellow = rgb(239,199,44)
-  bright_green = rgb(103,185,63)
-
-  if #{options.theme} == pastel
-    color1 = pastel_purple
-    color2 = pastel_pink
-    color3 = pastel_yellow
-    color4 = pastel_green
-    if #{options.textColor} == default
-      text-color = #fff
-    else
-      text-color = #{options.textColor}
-  else if #{options.theme} == dark
-    color1 = dark_purple
-    color2 = dark_pink
-    color3 = dark_yellow
-    color4 = dark_green
-    if #{options.textColor} == default
-      text-color = #000
-    else
-      text-color = #{options.textColor}
-  else
-    color1 = bright_purple
-    color2 = bright_pink
-    color3 = bright_yellow
-    color4 = bright_green
-    if #{options.textColor} == default
-      text-color = #fff
-    else
-      text-color = #{options.textColor}
+  font-family: -apple-system
+  left: 30px
+  bottom: 120px
+  color: #fff
 
   
   div
-    text-shadow: 0 0 1px rgba(#000, 0.5)
-    font-size: 20px
-    font-weight: 200
+    font-size: 11px
+    font-weight: 500
     display: block
-    color: text-color
-    width: 330px
+    color: rgba(255,255,255,1)
+    width: 220px
 
   .wrapper
-    xxwidth:100%
+    width:100%
     display:inline-block
 
   .title
-    font-weight: 300
+    font-weight: 700
     font-size: 25px
     padding:6px
 
   .event_title
-    font-weight: 250
+    font-weight: 500
     padding-top: 5px
     padding-left: 10px
     margin-left: 1.1em
@@ -111,25 +67,13 @@ style: """
 
   .event_time
     font-weight: 200
-    padding-left: 30px
+    padding-left: 24px
 
   .today
     padding-bottom:10px
 
-  .square
-    font-size: 26px
-    color: color1
-
-  .heart
-    font-size: 13px
-    color: color2
-
-  .triangle
-    font-size: 13px
-    color: color3
-
-  .circle
-    font-size: 25px
-    color: color4
+  .icon
+    font-size: 11px
+    color: rgba(#0bf, 1)
 
 """
